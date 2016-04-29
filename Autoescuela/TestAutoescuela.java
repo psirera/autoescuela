@@ -15,7 +15,7 @@ import java.io.*;
 public class TestAutoescuela {
     static Scanner input = new Scanner(System.in);
     public static ArrayList<Pregunta> leerPreguntas(ArrayList<Pregunta> almacen) {
-        File fe = new File("preguntas.txt");
+        File fe = new File("preguntas2.txt");
         if (fe.exists()) {
             try {
                 FileReader fr = new FileReader(fe);
@@ -145,7 +145,7 @@ public class TestAutoescuela {
         return almacen;
     }
     
-    public static void mostrar(ArrayList<Pregunta> almacen){
+    public static void mostrarPreguntas(ArrayList<Pregunta> almacen){
         
         for(Pregunta i: almacen){
             
@@ -159,6 +159,40 @@ public class TestAutoescuela {
             System.out.println("-----------------");
             
         }
+    }
+    
+    public static void guardarPreguntas(ArrayList<Pregunta> almacen){
+        try{
+                File fe = new File("preguntas.txt");
+                File fs = new File("preguntas2.txt");
+                FileWriter fw = new FileWriter(fs);
+                
+                for (Pregunta s: almacen){
+                    fw.write(s.getPregunta());
+                    fw.write("\r\n");
+                    fw.write(s.getR1());
+                    fw.write("\r\n");
+                    fw.write(s.getR2());
+                    fw.write("\r\n");
+                    fw.write(s.getR3());
+                    fw.write("\r\n");
+                    fw.write(s.getSolucion());
+                    fw.write("\r\n");
+                    String dificultad = String.valueOf(s.getDificultad());
+                    fw.write(dificultad);
+                    fw.write("\r\n");
+                    String repeticiones = String.valueOf(s.getRepeticiones());
+                    fw.write(repeticiones);
+                    fw.write("\r\n");
+                } 
+                if (fw != null){
+                    fw.close();
+                }
+                fs.renameTo(fe);            //no funciona en Windows (quiza por permisos). En Linux el método funciona.
+            } catch (IOException e){
+            e.printStackTrace();
+            }
+        
     }
     
     public static void main(String args[]){
@@ -187,10 +221,10 @@ public class TestAutoescuela {
                    almacen = eliminarPregunta(almacen);
                    break;
                case '4':
-                   mostrar(almacen);
+                   mostrarPreguntas(almacen);
                    break;
                case '5':
-                   
+                   guardarPreguntas(almacen);
                    break;
            }
         } while (opcion != '0');
