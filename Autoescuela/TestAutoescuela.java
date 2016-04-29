@@ -15,7 +15,7 @@ import java.io.*;
 public class TestAutoescuela {
     static Scanner input = new Scanner(System.in);
     public static ArrayList<Pregunta> leerPreguntas(ArrayList<Pregunta> almacen) {
-        File fe = new File("preguntas2.txt");
+        File fe = new File("preguntas.txt");
         if (fe.exists()) {
             try {
                 FileReader fr = new FileReader(fe);
