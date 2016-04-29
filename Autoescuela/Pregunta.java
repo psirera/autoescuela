@@ -1,6 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package FLucero_autoescuela;
 
-package Autoescuela;
-
+/**
+ *
+ * @author Fer
+ */
 public class Pregunta {
     
     //atributos
@@ -9,13 +17,13 @@ public class Pregunta {
     private String r1;
     private String r2;
     private String r3;
-    private char solucion;
-    private int dificultad;
-    private int repeticiones;
+    char solucion;
+    int dificultad;
+    int repeticiones;
     
-    //metodos
-    public Pregunta(String pregunta, String r1, String r2, String r3, char solucion, int dificultad, int repeticiones){
-        //this.id = id;
+    //constructor
+    public Pregunta(int id, String pregunta, String r1, String r2, String r3, char solucion, int dificultad, int repeticiones){
+        this.id = id;
         this.pregunta = pregunta;
         this.r1 = r1;
         this.r2 = r2;
@@ -23,10 +31,34 @@ public class Pregunta {
         this.solucion = solucion;
         this.dificultad = dificultad;
         this.repeticiones = repeticiones;
-        
+    }
+ 
+
+    //metodos
+    
+    public int getId(){
+        return id;
     }
     
-   
+    public String getPregunta(){
+        return pregunta;
+    }
+    
+    public String getR1(){
+        return r1;
+    }
+    
+    public String getR2(){
+        return r2;
+    }
+    
+    public String getR3(){
+        return r3;
+    }
+    
+    public char getSolucion(){
+        return solucion;
+    }
     
     public int getDificultad(){
         return dificultad;
@@ -40,7 +72,8 @@ public class Pregunta {
         return repeticiones;
     }
     
-    public void setRepeticiones(int repeticiones){
+    public void setRepeticiones(){
         this.repeticiones = repeticiones;
     }
+    
 }

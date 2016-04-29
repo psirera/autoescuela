@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package autoescuela_proyect;
+package FLucero_autoescuela;
 
 import java.util.*;
 import java.io.*;
@@ -75,7 +75,7 @@ public class TestAutoescuela {
         }
         
             int id = almacen.size()+1;
-            
+            input.nextLine();           //Se da el caso que a veces el buffer peta despues de meter un int al intentar poner un nextLine, agregando esto se come el \n
             System.out.println("Inserte enunciado de la pregunta");
             String pregunta = input.nextLine(); 
             
