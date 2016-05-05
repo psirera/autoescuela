@@ -5,6 +5,7 @@ import java.io.*;
 
 /**
  * @author Enrique Cano
+ * @author Vicente Giménez
  * @author Fernando Lucero
  * @author Pablo Sirera
  */
@@ -309,7 +310,7 @@ public class TestAutoescuela
 		{
 		try
 			{
-			File fs = new File("tests/" + ficherosTest + ".test");
+			File fs = new File(ficherosTest + ".test");
 			FileWriter fw = new FileWriter(fs);
 			for (Pregunta aGrabar : test)
 				{
@@ -345,7 +346,7 @@ public class TestAutoescuela
 		{
 		try
 			{
-			FileOutputStream fs = new FileOutputStream("tests/" + ficherosTest + ".solucion");
+			FileOutputStream fs = new FileOutputStream(ficherosTest + ".solucion");
 			DataOutputStream d = new DataOutputStream(fs);
 
 			int i = 0;

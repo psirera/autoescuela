@@ -2,6 +2,7 @@ package autoescuela;
 
 /**
  * @author Enrique Cano
+ * @author Vicente Giménez
  * @author Fernando Lucero
  * @author Pablo Sirera
  */
